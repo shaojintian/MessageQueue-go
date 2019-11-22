@@ -1,6 +1,6 @@
 # MessageQueue-go
 
-ProjectName and Description
+⚡️一个基于主题-订阅模型的快速响应，高可用的消息队列
 
 <!-- PROJECT SHIELDS -->
 
@@ -16,12 +16,12 @@ ProjectName and Description
 
 <p align="center">
   <a href="https://github.com/shaojintian/MessageQueue-go/">
-    <img src="docs/images/architecture.png" alt="Logo" width="80" height="80">
+    <img src="docs/images/logo.png" alt="Logo" width="80" height="80">
   </a>
 
-  <h3 align="center">Best-README-Template</h3>
+  <h3 align="center">Quick Response,High Availability</h3>
   <p align="center">
-    An awesome README template to jumpstart your projects!
+    An awesome MQ middleware to support your project!
     <br />
     <a href="https://github.com/shaojintian/MessageQueue-go"><strong>Explore the docs »</strong></a>
     <br />
@@ -32,8 +32,19 @@ ProjectName and Description
     ·
     <a href="https://github.com/shaojintian/MessageQueue-go/issues">Request Feature</a>
   </p>
-
+  
 </p>
+
+架构图：蓝色代表线程分配，白色代表逻辑流
+![architecture](docs/images/architecture.png)
+
+Feature:(详细见src/docs/)
+1. 主题发布-订阅模型
+2. 全程无锁
+3. Broker Cluster 的存储(元数据+消息)由开源的高性能Raft组[DragonBoat](https://github.com/shaojintian/dragonboat/blob/master/README.CHS.md)负责保证分布性一致性和容错性+RocksDB负责持久化
+4. 不采用刷盘做持久化也能达到直接刷盘的performance，集成更快
+
+
 
  本篇README.md面向开发者
 
@@ -54,7 +65,7 @@ ProjectName and Description
 
 ### 上手指南
 
-请将所有链接中的“shaojintian/MessageQueue-go”改为“your_github_name/your_repository”
+
 
 
 
