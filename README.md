@@ -35,13 +35,13 @@
   
 </p>
 
-架构图：蓝色代表线程分配，白色代表逻辑流
+架构图v0.0.1：蓝色代表线程分配，白色代表逻辑流
 ![architecture](docs/images/architecture.png)
 
 Feature:(详细见src/docs/)
 1. 主题发布-订阅模型
 2. 全程无锁
-3. Broker Cluster 的存储(元数据+消息)由开源的高性能Raft组[DragonBoat](https://github.com/shaojintian/dragonboat/blob/master/README.CHS.md)负责保证分布性一致性和容错性+RocksDB负责持久化
+3. Broker Cluster 的存储(元数据+消息)由开源的高性能Raft组[DragonBoat](https://github.com/shaojintian/dragonboat/blob/master/README.CHS.md)负责保证分布性一致性和容错性+[RocksDB](https://github.com/facebook/rocksdb/blob/master/INSTALL.md)负责持久化
 4. 不采用刷盘做持久化也能达到直接刷盘的performance，集成更快
 
 
